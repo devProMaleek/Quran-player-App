@@ -112,3 +112,197 @@ body{
     text-transform: capitalize;
     padding: 5px;
 }
+
+/* Quran Player */
+
+/* minimize view */
+
+.quran-player-section {
+    width: 100%;
+    height: 100px;
+    position: fixed;
+    bottom:0;
+    left: 0;
+    background: var(--alpha-color);
+    backdrop-filter: blur(50px);
+    transition: 1s;
+}
+.music-seek-bar {
+    appearance: none;
+    width: 100%;
+    position: absolute;
+    top: -4px;
+    height: 8px;
+    background: var(--secondary-color);
+    overflow: hidden;
+    border-radius: 10px;
+}
+.music-seek-bar::-webkit-slider-thumb {
+    appearance: none;
+    height: 10px;
+    width: 5px;
+    background: var(--primary-color);
+    cursor: pointer;
+    box-shadow: -400px 0 0 400px var(--primary-color);
+    border-radius: 10px;
+}
+
+.current-song-name {
+    font-weight: 300;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 5px;
+    text-transform: capitalize;
+}
+
+.controls {
+    position: relative;
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    font-size: 30px
+}
+
+.controls span {
+    display: none;
+    opacity: 0;
+    transition: 1s;
+}
+
+.quran-player-section.active .controls {
+    justify-content: center;
+}
+
+.quran-player-section.active .controls span {
+    font-size: 25px;
+    display: block;
+    opacity: 0.5;
+    margin: 0 30px;
+}
+
+.quran-player-section.active .controls span.active {
+    color: var(--primary-color);
+    opacity: 1;
+}
+
+.controls .main i {
+    margin: 0 5px;
+    display: none;
+}
+
+.controls .main i.active {
+    display: inline;
+}
+
+/* Maximize view */
+
+.quran-player-section .hide{
+    display: none;
+    opacity: 0;
+    transition: 1s;
+}
+
+.quran-player-section.active .hide {
+    display: block;
+    opacity: 1;
+}
+
+.quran-player-section.active {
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.quran-player-section.active .music-seek-bar {
+    position: relative;
+    display: block;
+    border-radius: 50px;
+    margin: auto;
+}
+
+.quran-player-section.active .current-song-name {
+    font-size: 40px;
+}
+
+.quran-player-section.active .controls {
+    width: 100%;
+    font-size: 30px;
+}
+
+.artist-name {
+    text-align: center;
+    font-size: 20px;
+    text-transform: capitalize;
+}
+
+.cover {
+    width: 30vh;
+    height: 30vh;
+    object-fit: auto;
+    margin: auto;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+}
+
+.current-time {
+    position: absolute;
+    margin-top: 5px;
+    left: 30px;
+}
+
+.duration {
+    position: absolute;
+    margin-top: 5px;
+    right: 30px;
+}
+
+.icon {
+    position: absolute;
+    top: -35px;
+    transform: scale(0.12);
+    background-color: black;
+}
+
+.back-btn {
+    left: -60px;
+}
+
+.nav-btn {
+    right: -65px;
+    top: -42px;
+}
+
+/* Volume Button */
+
+.volume-slider {
+    appearance: none;
+    width: 100px;
+    height: 40px;
+    position: absolute;
+    right: -35px;
+    bottom: 80px;
+    transform: rotate(-90deg);
+    border-radius: 20px;
+    background: var(--alpha-color);
+    overflow: hidden;
+    opacity: 0;
+    display: none;
+}
+
+.volume-slider.active {
+    opacity: 1;
+    display: block;
+}
+
+.volume-slider::-webkit-slider-thumb {
+    appearance: none;
+    height: 40px;
+    width: 10px;
+    background: var(--primary-color);
+    box-shadow: -200px 0 1px 200px var(--primary-color);
+}
