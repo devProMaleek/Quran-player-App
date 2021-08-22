@@ -1,0 +1,114 @@
+/* Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&family=Raleway:wght@200;400;600&display=swap");
+
+/* Universal Style */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Set root variable */
+
+:root {
+    --background: #141414;
+    --text-color: #fff;
+    --primary-color: #f70303;
+    --secondary-color: #000;
+    --alpha-color: rgba(0, 0, 0, 0.5);
+    --shadow: 0 15px 40px var(--alpha-color);
+}
+html{
+    background: var(--background);
+    display: flex;
+    justify-content: center;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    max-width: 375px;
+    position: relative;
+    background: var(--background);
+    font-family: "Poppins", sans-serif;
+    font-family: "Raleway", sans-serif;
+    color: var(--text-color);
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+/* Home section */
+.home-section {
+    width: 100%;
+    padding: 20px;
+    height: 100%;
+    padding-bottom: 100px;
+    overflow-y: auto;
+}
+
+/* Carousel */
+.carousel-section {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    position: relative;
+}
+
+.carousel-section img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: auto;
+    opacity: 0;
+    transition: 1s;
+}
+
+.carousel-section img.active{
+    opacity: 1;
+}
+
+/* Horizontal Scrolling Playlist */
+
+.heading {
+    margin: 30px 0 10px;
+    text-transform: capitalize;
+    font-weight: 400;
+    font-size: 30px;
+}
+
+/* Playlists card */
+.playlists-group {
+    position: relative;
+    width: 100%;
+    min-height: 200px;
+    height: auto;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+}
+
+.playlist-card {
+    flex: 0 0 auto;
+    max-width: 150px;
+    height: 100%;
+    margin-right: 20px;
+}
+
+.playlist-card-img {
+    width: 100%;
+    height: 150px;
+    object-fit: auto;
+    border-radius: 20px;
+}
+
+.playlist-card-name {
+    width: 100%;
+    text-align: justify;
+    font-size: 20px;
+    text-transform: capitalize;
+    padding: 5px;
+}
