@@ -132,3 +132,21 @@ const formatTime = (time) => {
 
     return `${hrs}:${min}:${sec}`
 }
+
+// Play Button Click Event
+
+playBtn.addEventListener('click', () => {
+    music.play()
+
+    playBtn.classList.remove('active')
+    pauseBtn.classList.add('active')
+})
+
+// Pause Button Click Event
+
+pauseBtn.addEventListener('click', () => {
+    music.pause()
+
+    pauseBtn.classList.remove('active')
+    playBtn.classList.add('active')
+})
