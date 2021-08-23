@@ -150,3 +150,48 @@ pauseBtn.addEventListener('click', () => {
     pauseBtn.classList.remove('active')
     playBtn.classList.add('active')
 })
+
+// Forward Button Click Event
+
+forwardBtn.addEventListener('click', () => {
+  if(currentMusic >= songs.length - 1){
+    currentMusic = 0;
+  }else {
+    currentMusic++
+  }
+  setMusic(currentMusic);
+  playBtn.click() 
+})
+
+// Backward Button Click Event
+backwardBtn.addEventListener('click', () => {
+  if(currentMusic <= 0){
+    // Set to last played.
+    currentMusic = songs.length - 1;
+  } else{
+    currentMusic--;
+  }
+  setMusic(currentMusic);
+  playBtn.click()
+}) 
+
+// SeekBar Button Click Event
+setInterval(() => {
+  seekBar.value = music.currentTime;
+  currentMusicTime.innerHTML = formatTime(music.currentTime)
+  if(Math.floor(music.currentTime) == Math.floor(seekBar.max)) {
+    if(repeatBtn.className.includes('active')) {
+      setMusic(currentMusic)
+      playBtn.click();
+    } else {
+      forwardBtn.click();
+    }
+  }
+}, 500);
+
+// Set the current time of the surah to the present value of the range input type.
+seekBar.addEventListener('change', () => {
+  music.currentTime = seekBar.value
+})
+
+setInterval(() => {console.log(seekBar.value)}, 500)
