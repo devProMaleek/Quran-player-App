@@ -1,7 +1,6 @@
 // Carousels
 
 const carousal = [...document.querySelectorAll(".carousel-section img")];
-console.log(carousal);
 let carousalImageIndex = 0;
 
 const changeCarousal = () => {
@@ -194,4 +193,27 @@ seekBar.addEventListener('change', () => {
   music.currentTime = seekBar.value
 })
 
-setInterval(() => {console.log(seekBar.value)}, 500)
+// Repeat Button
+repeatBtn.addEventListener('click', () => {
+  repeatBtn.classList.toggle('active')
+})
+
+// Volume Section
+
+volumeBtn.addEventListener('click', () => {
+  volumeBtn.classList.toggle('active')
+  volumeSlider.classList.toggle('active')
+})
+
+volumeSlider.addEventListener('input', () => {
+  music.volume = volumeSlider.value
+})
+
+// Making Playlist to Function
+
+queue.forEach((item, i) => {
+  item.addEventListener('click', () => {
+    setMusic(i)
+    playBtn.click();
+  })
+})
