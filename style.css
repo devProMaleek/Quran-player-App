@@ -136,6 +136,7 @@ body{
     background: var(--secondary-color);
     overflow: hidden;
     border-radius: 10px;
+    cursor: pointer;
 }
 .music-seek-bar::-webkit-slider-thumb {
     appearance: none;
